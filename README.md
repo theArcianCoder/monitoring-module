@@ -50,4 +50,26 @@ output "eks_cluster_id" {
 }
 
 ```
+### Module Input Variables
 
+- `cluster_name`: (Required) Name of the EKS cluster.
+- `cluster_endpoint`: (Required) Endpoint URL of the EKS cluster.
+- `namespace`: (Required) Namespace for the Helm release.
+- `stack_name`: (Required) Name of the Helm release stack.
+
+### Module Output
+- `cluster_endpoint`: Endpoint URL of the EKS cluster.
+
+## Resources Created
+The module creates the following Kubernetes resources:
+- Prometheus server deployment
+- Grafana deployment
+- ConfigMap for Grafana datasources
+- ConfigMap for Grafana dashboards
+- ServiceMonitor to monitor Prometheus and Grafana
+- Service for Grafana
+- Service for Prometheus
+- Ingress for Grafana
+
+## Variables and Customization
+You can customize the Grafana datasources and dashboards by providing additional values to the module. Please refer to the [Helm chart documentation](https://github.com/theArcianCoder/monitoring-setup) for more details.
