@@ -28,8 +28,3 @@ module "kube_prometheus" {
   namespace      = var.namespace
   stack_name     = var.stack_name
 }
-
-output "eks_cluster_id" {
-  description = "The endpoint URL of the EKS cluster."
-  value       = data.aws_eks_cluster.cluster.endpoint
-}
