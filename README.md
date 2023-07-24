@@ -162,3 +162,4 @@ The module creates the following Kubernetes resources:
 You can customize the Grafana datasources and dashboards by providing additional values to the module. Please refer to the [Helm chart documentation](https://github.com/theArcianCoder/monitoring-setup) for more details.
 ## Note :-
 - Please provide required permissions to the node  for the CloudWatch Access to Grafana.
+- To access the UI of Grafana Please change the Kubernetes service type to LoadBalancer/NodePort according to need.
