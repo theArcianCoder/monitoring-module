@@ -156,8 +156,9 @@ The module creates the following Kubernetes resources:
 - ConfigMap for Grafana dashboards
 - ServiceMonitor to monitor Prometheus and Grafana
 - Service for Grafana
-- Service for Prometheus
+- Service for Prometheus 
 - Ingress for Grafana
-
 ## Variables and Customization
 You can customize the Grafana datasources and dashboards by providing additional values to the module. Please refer to the [Helm chart documentation](https://github.com/theArcianCoder/monitoring-setup) for more details.
+## Note :-
+- Please provide required permissions to the node  for the CloudWatch Access to Grafana.
