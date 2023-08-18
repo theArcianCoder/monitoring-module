@@ -4,7 +4,6 @@ provider "kubernetes" {
     command     = "aws"
     args        = ["eks", "get-token", "--cluster-name", var.cluster_name]
   }
-  host                   = local.cluster_endpoint
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
 }
 
@@ -24,7 +23,6 @@ data "aws_eks_cluster_auth" "cluster" {
 
 module "kube_prometheus" {
   source         = "git::https://github.com/theArcianCoder/terraform-module-kube-prometheus.git"
-  eks_cluster_id = local.cluster_endpoint
   namespace      = var.namespace
   stack_name     = var.stack_name
 }
