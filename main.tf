@@ -26,7 +26,7 @@ data "aws_eks_cluster_auth" "cluster" {
 
 module "kube_prometheus" {
   source         = "git::https://github.com/theArcianCoder/terraform-module-kube-prometheus.git"
-  eks_cluster_id = var.cluster_endpoint
+  eks_cluster_id = local.cluster_endpoint
   namespace      = var.namespace
   stack_name     = var.stack_name
 }
