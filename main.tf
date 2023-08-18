@@ -1,3 +1,5 @@
+data "kubernetes_config" "current_context" {}
+
 provider "kubernetes" {
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
