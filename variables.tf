@@ -10,7 +10,6 @@ variable "cluster_name" {
 
 variable "cluster_endpoint" {
   description = "Cluster endpoint URL"
-  default     = local.cluster_endpoint
 }
 
 variable "namespace" {
