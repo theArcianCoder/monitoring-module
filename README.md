@@ -39,16 +39,9 @@ To use this module in your infrastructure, create a `main.tf` file and include t
 module "my_kube_prometheus" {
   source           = "git::https://github.com/theArcianCoder/monitoring-module.git"
   cluster_name     = "cluster's-name"
-  cluster_endpoint = "cluster's-endpoint"
   namespace        = "monitoring"
   stack_name       = "monitoring-stack"
 }
-
-output "eks_cluster_id" {
-  description = "The endpoint URL of the EKS cluster."
-  value       = module.my_kube_prometheus.eks_cluster_id
-}
-
 ```
    1. **Initialize Terraform:**
 
