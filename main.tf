@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    kubectl = {
-      source  = "gavinbunney/kubectl"
-      version = ">= 1.7.0"
-    }
-  }
-}
 provider "kubernetes" {
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
@@ -16,15 +8,16 @@ provider "kubernetes" {
   cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
 }
 
-
-provider "kubectl" {  
-  host = module.eks_cluster.cluster_endpoint  
-  cluster_ca_certificate = base64decode(module.eks_cluster.cluster_certificate_authority_data)  
-  exec {    
-    api_version = "client.authentication.k8s.io/v1beta1"    
-    command     = "aws"    
-    args = ["eks", "get-token", "--cluster-name", local.workspace.eks_cluster.name,"--role-arn" ,"arn:aws:iam::${local.workspace.aws.account_id}:role/${local.workspace.aws.role}" ]  
-    } 
+provider "helm" {
+  kubernetes {
+      exec {
+        api_version = "client.authentication.k8s.io/v1beta1"
+        command     = "aws"
+        args        = ["eks", "get-token", "--cluster-name", var.cluster_name]
+      }
+      host                   = data.aws_eks_cluster.cluster.endpoint
+      cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+    }
 }
 
 data "aws_eks_cluster" "cluster" {
