@@ -1,3 +1,10 @@
+terraform {
+  required_providers {
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+    }
+  }
+}
 provider "kubernetes" {
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
@@ -21,7 +28,6 @@ provider "helm" {
 }
 
 provider "kubectl" {
-      source  = "gavinbunney/kubectl"
       exec {
         api_version = "client.authentication.k8s.io/v1beta1"
         command     = "aws"
