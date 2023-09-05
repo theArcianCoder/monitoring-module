@@ -33,4 +33,5 @@ module "kube_prometheus" {
   eks_cluster_id = data.aws_eks_cluster.cluster.endpoint
   namespace      = var.namespace
   stack_name     = var.stack_name
+  ebs_volume_id  = var.ebs_volume_id
 }
