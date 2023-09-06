@@ -34,4 +34,5 @@ module "kube_prometheus" {
   namespace      = var.namespace
   stack_name     = var.stack_name
   ebs_volume_id  = var.ebs_volume_id
+  cluster_name   = var.cluster_name
 }
