@@ -41,6 +41,7 @@ module "my_kube_prometheus" {
   cluster_name     = "cluster's-name"
   namespace        = "monitoring"
   stack_name       = "monitoring-stack"
+  ebs_volume_id    = "ebs's volume id that you want to attach for persistence"
 }
 ```
    1. **Initialize Terraform:**
