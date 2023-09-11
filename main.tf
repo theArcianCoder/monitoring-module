@@ -35,4 +35,6 @@ module "kube_prometheus" {
   stack_name     = var.stack_name
   ebs_volume_id  = var.ebs_volume_id
   cluster_name   = var.cluster_name
+  target1        = var.target1
+  target2        = var.target2
 }

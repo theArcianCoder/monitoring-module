@@ -13,3 +13,12 @@ variable "stack_name" {
 variable "ebs_volume_id" {
   description = "Id of the ebs"
 }
+variable "target1" {
+  description = "The first target IP and port"
+  default     = "18.236.158.154:9114"
+}
+
+variable "target2" {
+  description = "The second target IP and port"
+  default     = "18.236.158.154:9216"
+}
