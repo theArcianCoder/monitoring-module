@@ -37,4 +37,5 @@ module "kube_prometheus" {
   cluster_name   = var.cluster_name
   target1        = var.target1
   target2        = var.target2
+  az             = var.az
 }
