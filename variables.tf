@@ -9,7 +9,12 @@ variable "namespace" {
 variable "stack_name" {
   description = "Name of the Helm release stack"
 }
-
+variable "ebs_volume_id1" {
+  description = "The ID of the ebs volume."
+}
+variable "ebs_volume_id2" {
+  description = "The ID of the ebs volume for grafana."
+}
 variable "ebs_volume_id" {
   description = "Id of the ebs"
 }
