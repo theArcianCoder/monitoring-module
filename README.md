@@ -43,8 +43,8 @@ module "my_kube_prometheus" {
   stack_name       = "watcher"
   ebs_volume_id1   = "vol-020b5ffa312b982c4"
   ebs_volume_id2   = "vol-06d46c5fd60639507"
-  target1          = "127.0.0.1:9216"
-  target2          = "127.0.0.1:9114"
+  mongo_db_expo_ip = "127.0.0.1:9216"
+  elasticsearch_expo_ip = "127.0.0.1:9114"
   az               = "us-east-2b"
 }
 ```
