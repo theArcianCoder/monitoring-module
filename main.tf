@@ -36,7 +36,7 @@ module "kube_prometheus" {
   ebs_volume_id1  = var.ebs_volume_id1
   ebs_volume_id2  = var.ebs_volume_id2
   cluster_name   = var.cluster_name
-  target1        = var.target1
-  target2        = var.target2
+  mongo_db_expo_ip = var.mongo_db_expo_ip
+  elasticsearch_expo_ip = var.elasticsearch_expo_ip
   az             = var.az
 }
