@@ -26,9 +26,9 @@ This Terraform module deploys and configures resources for your Kubernetes clust
 Before using this module, ensure that you have the following prerequisites:
 
 - An existing AWS EKS cluster
-- AWS CLI and AWS IAM Authenticator configured
-- Terraform installed locally
-- kubectl and Helm installed locally
+- AWS CLI and AWS IAM Authenticator configured [Version >= 2.0.0]
+- Terraform [Version >= 2.0.0]
+- kubectl and Helm [Version >= 3.8]
 - AWS credentials with necessary permissions
 
 ## Usage
