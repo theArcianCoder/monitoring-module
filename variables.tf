@@ -20,7 +20,7 @@ variable "target1" {
   default     = "18.236.158.154:9114"
 }
 
-variable "target2" {
+variable "elasticsearch_expo_ip" {
   description = "The second target IP and port"
   default     = "18.236.158.154:9216"
 }
