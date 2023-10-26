@@ -34,7 +34,7 @@ module "kube_prometheus" {
   namespace      = var.namespace
   stack_name     = var.stack_name
   cluster_name   = var.cluster_name
-  target1        = var.target1
-  target2        = var.target2
+  mongo_db_expo_ip = var.mongo_db_expo_ip
+  elasticsearch_expo_ip = var.elasticsearch_expo_ip
   az             = var.az
 }

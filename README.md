@@ -26,9 +26,9 @@ This Terraform module deploys and configures resources for your Kubernetes clust
 Before using this module, ensure that you have the following prerequisites:
 
 - An existing AWS EKS cluster
-- AWS CLI and AWS IAM Authenticator configured
-- Terraform installed locally
-- kubectl and Helm installed locally
+- AWS CLI and AWS IAM Authenticator configured [Version >= 2.0.0]
+- Terraform [Version >= 2.0.0]
+- kubectl and Helm [Version >= 3.8]
 - AWS credentials with necessary permissions
 
 ## Usage
@@ -38,10 +38,14 @@ To use this module in your infrastructure, create a `main.tf` file and include t
 ```terraform
 module "my_kube_prometheus" {
   source           = "git::https://github.com/theArcianCoder/monitoring-module.git"
-  cluster_name     = "cluster's-name"
+  cluster_name     = "dev-vr-saas"
   namespace        = "monitoring"
-  stack_name       = "monitoring-stack"
-  ebs_volume_id    = "ebs's volume id that you want to attach for persistence"
+  stack_name       = "watcher"
+  ebs_volume_id1   = "vol-020b5ffa312b982c4"
+  ebs_volume_id2   = "vol-06d46c5fd60639507"
+  mongo_db_expo_ip = "127.0.0.1:9216"
+  elasticsearch_expo_ip = "127.0.0.1:9114"
+  az               = "us-east-2b"
 }
 ```
    1. **Initialize Terraform:**
