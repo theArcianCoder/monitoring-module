@@ -28,8 +28,8 @@ data "aws_eks_cluster_auth" "cluster" {
   name = var.cluster_name
 }
 
-module "kube_prometheus" {
-  source         = "git::https://github.com/theArcianCoder/terraform-module-kube-prometheus.git"
+module "monitoring-kube-stack" {
+  source         = "./terraform-module-monitoring-kube-stack"
   eks_cluster_id = data.aws_eks_cluster.cluster.endpoint
   namespace      = var.namespace
   stack_name     = var.stack_name
